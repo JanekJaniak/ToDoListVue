@@ -10,9 +10,13 @@ export default {
     handleButton(){
     },
     methods:{
-        deleteObject(id) {
-            this.$delete(this.items, id);
+        removeItem(event) {  
+            console.log(event);
+            this.$emit("remove", );
         }
     }
 };
+
+list
+
 </script>
