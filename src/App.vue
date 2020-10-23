@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HelloWorld msg="Hello" />
-    <List :items="items" />
+    <List :items="items" @remove="removeItem" />
     <ItemCreator @create="addItem" />
   </div>
 </template>
@@ -10,7 +10,6 @@
 import HelloWorld from "./components/HelloWorld";
 import List from "./components/List";
 import ItemCreator from "./components/ItemCreator";
-import ItemRemover from "./components/ItemRemover";
 
 export default {
   name: "App",
@@ -28,12 +27,15 @@ export default {
     addItem(value) {
       this.items.push(value);
     },
+
+    removeItem(itemID) {
+      this.items = this.items.filter(item => item.id != itemID)
+    }
   },
   components: {
     HelloWorld,
     List,
     ItemCreator,
-    ItemRemover,
   },
 };
 </script>
@@ -47,4 +49,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+  li {
+    list-style-type: none;
+  }
+
 </style>

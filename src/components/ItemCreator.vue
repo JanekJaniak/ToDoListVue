@@ -22,8 +22,10 @@ export default {
         value: this.value,
         id: Date.now(),
       };
-      this.$emit("create", item);
-      this.value= "";
+      if(this.value) {
+        this.$emit("create", item);
+        this.value = "";
+      }
     },
   },
 };

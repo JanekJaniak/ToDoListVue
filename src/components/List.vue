@@ -1,7 +1,10 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in items" :key="item.id">{{ item.value }}</li>
+      <li v-for="item in items" :key="item.id">
+        {{ item.value }} 
+        <button v-on:click="handleRemoveButton(item.id)">remove</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -12,5 +15,10 @@ export default {
   props: {
     items: Array,
   },
+  methods: {
+    handleRemoveButton(itemID) {
+      this.$emit("remove", itemID)
+    }
+  }
 };
 </script>
