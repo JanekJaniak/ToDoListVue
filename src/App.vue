@@ -25,14 +25,12 @@ export default {
   },
   methods: {
     addItem(value) {
-      if(value == "") return;
       this.items.push(value);
     },
     removeItem(itemID) {
-      this.items = this.items.filter((item) => {
-        return item.id != itemID;
-      })
-    }
+      this.items = this.items.filter(item => item.id != itemID)
+      }
+    
   },
   components: {
     HelloWorld,

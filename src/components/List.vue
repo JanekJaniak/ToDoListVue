@@ -1,7 +1,8 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in items" :key="item.id">{{ item.value }} 
+      <li v-for="item in items" :key="item.id">
+        {{ item.value }} 
         <button v-on:click="handleRemoveButton(item.id)">remove</button>
       </li>
     </ul>
