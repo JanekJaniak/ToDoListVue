@@ -27,10 +27,10 @@ export default {
     addItem(value) {
       this.items.push(value);
     },
+
     removeItem(itemID) {
       this.items = this.items.filter(item => item.id != itemID)
-      }
-    
+    }
   },
   components: {
     HelloWorld,
