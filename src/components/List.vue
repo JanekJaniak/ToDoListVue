@@ -3,22 +3,45 @@
     <ul>
       <li v-for="item in items" :key="item.id">
         {{ item.value }} 
-        <button v-on:click="handleRemoveButton(item.id)">remove</button>
+        <ActionButton :itemID="item.id" :action="removeItem" actionName="remove"/>
+        <ActionButton :itemID="item.id" :action="duplicateItem" actionName="duplicate"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import ActionButton from "./ActionButton"
 export default {
   name: "List",
   props: {
     items: Array,
   },
   methods: {
-    handleRemoveButton(itemID) {
+    removeItem(itemID) {
       this.$emit("remove", itemID)
+    },
+    duplicateItem(itemID) {
+      this.$emit("duplicate", itemID)
     }
+  },
+  components: {
+    ActionButton
   }
 };
 </script>
+
+<style>
+  
+  ul {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline-flex;
+  }
+
+</style>
