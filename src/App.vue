@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HelloWorld msg="Hello" />
-    <List :items="items" @remove="removeItem" />
+    <List :items="items" @remove="removeItem" @duplicate="duplicateItem" />
     <ItemCreator @create="addItem" />
   </div>
 </template>
@@ -30,6 +30,10 @@ export default {
 
     removeItem(itemID) {
       this.items = this.items.filter(item => item.id != itemID)
+    },
+
+    duplicateItem(itemID) {
+      console.log(itemID);
     }
   },
   components: {
@@ -49,8 +53,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-  li {
-    list-style-type: none;
-  }
 
 </style>
