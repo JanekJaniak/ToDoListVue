@@ -33,8 +33,13 @@ export default {
     },
 
     duplicateItem(itemID) {
-      console.log(itemID);
-    }
+      const duplicateValue = this.items.find(item => item.id == itemID)
+      const duplicatItem = {
+        value: duplicateValue.value,
+        id: Date.now()
+      }
+      this.items.push(duplicatItem);
+    },
   },
   components: {
     HelloWorld,
