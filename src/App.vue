@@ -33,9 +33,9 @@ export default {
     },
 
     duplicateItem(itemID) {
-      const duplicateId = this.items.find(item => item.id == itemID)
+      const value = this.items.find(item => item.id == itemID).value
       const duplicateItem = {
-        value: duplicateId.value,
+        value,
         id: Date.now()
       }
       this.items.push(duplicateItem);
