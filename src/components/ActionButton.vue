@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: "ItemRemover",
+    name: "ActionButton",
     props: {
         itemID: Number,
         action: Function,

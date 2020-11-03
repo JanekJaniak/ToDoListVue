@@ -35,8 +35,8 @@ export default {
   
   ul {
     display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
   }
 
   li {
